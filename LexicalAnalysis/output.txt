@@ -1,0 +1,2758 @@
+第1行
+	punct	#
+	id	include
+	literal	"LexicalAnalysis.h"
+第3行
+	const	const
+	char	char
+	punct	*
+	id	LexicalAnalysis
+	punct	::
+	id	m_keyword
+	punct	[
+	10num	38
+	punct	]
+	punct	=
+第4行
+	punct	{
+第5行
+	literal	"void"
+	punct	,
+	literal	"char"
+	punct	,
+	literal	"int"
+	punct	,
+	literal	"flaot"
+	punct	,
+	literal	"double"
+	punct	,
+第6行
+	literal	"short"
+	punct	,
+	literal	"long"
+	punct	,
+	literal	"signed"
+	punct	,
+	literal	"unsigned"
+	punct	,
+第7行
+	literal	"struct"
+	punct	,
+	literal	"union"
+	punct	,
+	literal	"enum"
+	punct	,
+	literal	"typedef"
+	punct	,
+	literal	"sizeof"
+	punct	,
+第8行
+	literal	"auto"
+	punct	,
+	literal	"static"
+	punct	,
+	literal	"register"
+	punct	,
+	literal	"extern"
+	punct	,
+	literal	"const"
+	punct	,
+	literal	"volatile"
+	punct	,
+第9行
+	literal	"return"
+	punct	,
+	literal	"continue"
+	punct	,
+	literal	"break"
+	punct	,
+	literal	"goto"
+	punct	,
+第10行
+	literal	"if"
+	punct	,
+	literal	"else"
+	punct	,
+	literal	"switch"
+	punct	,
+	literal	"case"
+	punct	,
+	literal	"default"
+	punct	,
+第11行
+	literal	"for"
+	punct	,
+	literal	"do"
+	punct	,
+	literal	"while"
+	punct	,
+第13行
+	literal	"id"
+	punct	,
+	literal	"10num"
+	punct	,
+	literal	"16num"
+	punct	,
+	literal	"literal"
+	punct	,
+	literal	"punct"
+第14行
+	punct	}
+	punct	;
+第15行
+	const	const
+	char	char
+	punct	*
+	id	LexicalAnalysis
+	punct	::
+	id	m_punctuation
+	punct	(
+	literal	"+-*/()[]{}!@#$%^&<>=|:;?~.,\'`\""
+	punct	)
+	punct	;
+第17行
+	id	LexicalAnalysis
+	punct	::
+	id	LexicalAnalysis
+	punct	(
+	const	const
+	char	char
+	punct	*
+	id	_fileName
+	punct	)
+第18行
+	punct	:
+第19行
+	id	m_file
+	punct	(
+	id	_fileName
+	punct	)
+	punct	,
+第20行
+	id	m_fout
+	punct	(
+	literal	"output.txt"
+	punct	)
+	punct	,
+第21行
+	id	m_fileLen
+	punct	(
+	10num	0
+	punct	)
+	punct	,
+第22行
+	id	m_currPos
+	punct	(
+	10num	0
+	punct	)
+	punct	,
+第23行
+	id	m_lineNum
+	punct	(
+	10num	1
+	punct	)
+	punct	,
+第24行
+	id	m_wordNum
+	punct	(
+	10num	0
+	punct	)
+	punct	,
+第25行
+	id	m_bufferMoved
+	punct	(
+	id	NULL
+	punct	)
+	punct	,
+第26行
+	id	m_isBackward
+	punct	(
+	id	false
+	punct	)
+	punct	,
+第27行
+	id	m_keywordLen
+	punct	(
+	10num	32
+	punct	)
+	punct	,
+第28行
+	id	m_punctuationLen
+	punct	(
+	id	strlen
+	punct	(
+	id	m_punctuation
+	punct	)
+	punct	)
+第29行
+	punct	{
+第30行
+	id	memset
+	punct	(
+	id	m_bufferA
+	punct	,
+	10num	0
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第31行
+	id	memset
+	punct	(
+	id	m_bufferB
+	punct	,
+	10num	0
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第32行
+	if	if
+	punct	(
+	id	m_file
+	punct	.
+	id	is_open
+	punct	(
+	punct	)
+	punct	)
+第33行
+	punct	{
+第34行
+	id	m_file
+	punct	.
+	id	seekg
+	punct	(
+	10num	0
+	punct	,
+	id	ios
+	punct	::
+	id	end
+	punct	)
+	punct	;
+第35行
+	id	m_fileLen
+	punct	=
+	punct	(
+	int	int
+	punct	)
+	id	m_file
+	punct	.
+	id	tellg
+	punct	(
+	punct	)
+	punct	;
+第36行
+	id	m_file
+	punct	.
+	id	seekg
+	punct	(
+	10num	0
+	punct	,
+	10num	0
+	punct	)
+	punct	;
+第37行
+	id	m_file
+	punct	.
+	id	read
+	punct	(
+	id	m_bufferA
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第38行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferA
+	punct	;
+第39行
+	punct	}
+第40行
+	punct	}
+第42行
+	id	LexicalAnalysis
+	punct	::
+	id	LexicalAnalysis
+	punct	(
+	const	const
+	id	LexicalAnalysis
+	punct	&
+	id	_lexicalAnalysis
+	punct	)
+第43行
+	punct	{
+第45行
+	punct	}
+第47行
+	id	LexicalAnalysis
+	punct	::
+	punct	~
+	id	LexicalAnalysis
+	punct	(
+	punct	)
+第48行
+	punct	{
+第49行
+	punct	}
+第51行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	Analyze
+	punct	(
+	punct	)
+第52行
+	punct	{
+第53行
+	if	if
+	punct	(
+	punct	!
+	id	m_file
+	punct	.
+	id	is_open
+	punct	(
+	punct	)
+	punct	)
+第54行
+	punct	{
+第55行
+	id	cout
+	punct	<<
+	literal	"File loading error"
+	punct	<<
+	id	endl
+	punct	;
+第56行
+	return	return
+	id	false
+	punct	;
+第57行
+	punct	}
+第59行
+	int	int
+	id	temp
+	punct	=
+	punct	-
+	10num	1
+	punct	;
+第60行
+	while	while
+	punct	(
+	10num	1
+	punct	)
+第61行
+	punct	{
+第63行
+	if	if
+	punct	(
+	punct	!
+	id	DeleteNonsense
+	punct	(
+	punct	)
+	punct	)
+第64行
+	return	return
+	id	true
+	punct	;
+第67行
+	id	pair
+	punct	<
+	id	Token
+	punct	,
+	id	string
+	punct	>
+	id	data
+	punct	;
+第69行
+	if	if
+	punct	(
+	id	IsEnd
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第70行
+	punct	{
+第71行
+	return	return
+	id	true
+	punct	;
+第72行
+	punct	}
+第74行
+	else	else
+	if	if
+	punct	(
+	id	IsDecimalNumber
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第75行
+	punct	{
+第76行
+	id	data
+	punct	.
+	id	first
+	punct	=
+	id	GetNumber
+	punct	(
+	id	data
+	punct	.
+	id	second
+	punct	)
+	punct	;
+第77行
+	if	if
+	punct	(
+	id	data
+	punct	.
+	id	first
+	punct	==
+	id	ERROR
+	punct	)
+第78行
+	punct	{
+第79行
+	id	cout
+	punct	<<
+	literal	"ERROR:"
+	punct	<<
+	id	data
+	punct	.
+	id	second
+	punct	;
+第80行
+	continue	continue
+	punct	;
+第81行
+	punct	}
+第82行
+	punct	++
+	id	m_wordNum
+	punct	;
+第83行
+	punct	}
+第85行
+	else	else
+	if	if
+	punct	(
+	id	IsAlphaOrUnderline
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第86行
+	punct	{
+第87行
+	id	data
+	punct	.
+	id	first
+	punct	=
+	id	GetKeywordOrIdentifier
+	punct	(
+	id	data
+	punct	.
+	id	second
+	punct	)
+	punct	;
+第88行
+	if	if
+	punct	(
+	id	data
+	punct	.
+	id	first
+	punct	==
+	id	ERROR
+	punct	)
+第89行
+	punct	{
+第90行
+	id	cout
+	punct	<<
+	literal	"ERROR:"
+	punct	<<
+	id	data
+	punct	.
+	id	second
+	punct	;
+第91行
+	continue	continue
+	punct	;
+第92行
+	punct	}
+第93行
+	punct	++
+	id	m_wordNum
+	punct	;
+第94行
+	punct	}
+第96行
+	else	else
+第97行
+	punct	{
+第98行
+	id	data
+	punct	.
+	id	first
+	punct	=
+	id	GetPunctuation
+	punct	(
+	id	data
+	punct	.
+	id	second
+	punct	)
+	punct	;
+第99行
+	if	if
+	punct	(
+	id	data
+	punct	.
+	id	first
+	punct	==
+	id	ERROR
+	punct	)
+第100行
+	punct	{
+第101行
+	id	cout
+	punct	<<
+	literal	"ERROR:"
+	punct	<<
+	id	data
+	punct	.
+	id	second
+	punct	;
+第102行
+	continue	continue
+	punct	;
+第103行
+	punct	}
+第104行
+	punct	}
+第106行
+	id	m_data
+	punct	.
+	id	push_back
+	punct	(
+	id	data
+	punct	)
+	punct	;
+第108行
+	if	if
+	punct	(
+	id	temp
+	punct	!=
+	id	m_lineNum
+	punct	)
+第109行
+	punct	{
+第110行
+	id	temp
+	punct	=
+	id	m_lineNum
+	punct	;
+第111行
+	id	std
+	punct	::
+	id	cout
+	punct	<<
+	literal	"第"
+	punct	<<
+	id	temp
+	punct	<<
+	literal	"行"
+	punct	<<
+	id	endl
+	punct	;
+第112行
+	id	m_fout
+	punct	<<
+	literal	"第"
+	punct	<<
+	id	temp
+	punct	<<
+	literal	"行"
+	punct	<<
+	id	endl
+	punct	;
+第113行
+	punct	}
+第115行
+	id	std
+	punct	::
+	id	cout
+	punct	<<
+	literal	"\t"
+	punct	<<
+	id	m_keyword
+	punct	[
+	id	data
+	punct	.
+	id	first
+	punct	]
+	punct	<<
+	literal	"\t"
+	punct	<<
+	id	data
+	punct	.
+	id	second
+	punct	<<
+	id	endl
+	punct	;
+第116行
+	id	m_fout
+	punct	<<
+	literal	"\t"
+	punct	<<
+	id	m_keyword
+	punct	[
+	id	data
+	punct	.
+	id	first
+	punct	]
+	punct	<<
+	literal	"\t"
+	punct	<<
+	id	data
+	punct	.
+	id	second
+	punct	<<
+	id	endl
+	punct	;
+第117行
+	punct	}
+第119行
+	return	return
+	id	true
+	punct	;
+第120行
+	punct	}
+第122行
+	void	void
+	id	LexicalAnalysis
+	punct	::
+	id	Print
+	punct	(
+	punct	)
+第123行
+	punct	{
+第124行
+	id	std
+	punct	::
+	id	cout
+	punct	<<
+	literal	"文件长度："
+	punct	<<
+	id	m_fileLen
+	punct	<<
+	literal	"\t文件行数："
+	punct	<<
+	id	m_lineNum
+	punct	<<
+	literal	"\t单词数量"
+	punct	<<
+	id	m_wordNum
+	punct	<<
+	id	endl
+	punct	;
+第125行
+	id	m_fout
+	punct	<<
+	literal	"文件长度："
+	punct	<<
+	id	m_fileLen
+	punct	<<
+	literal	"\t文件行数："
+	punct	<<
+	id	m_lineNum
+	punct	<<
+	literal	"\t单词数量"
+	punct	<<
+	id	m_wordNum
+	punct	<<
+	id	endl
+	punct	;
+第126行
+	punct	}
+第128行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	Forward
+	punct	(
+	punct	)
+第129行
+	punct	{
+第130行
+	if	if
+	punct	(
+	punct	(
+	id	m_currPos
+	punct	+
+	10num	1
+	punct	)
+	punct	%
+	id	BUFFER_LEN
+	punct	)
+第131行
+	punct	{
+第132行
+	punct	++
+	id	m_bufferMoved
+	punct	;
+第133行
+	punct	++
+	id	m_currPos
+	punct	;
+第134行
+	punct	}
+第135行
+	else	else
+第136行
+	punct	{
+第137行
+	if	if
+	punct	(
+	punct	(
+	punct	(
+	id	m_currPos
+	punct	+
+	10num	1
+	punct	)
+	punct	/
+	id	BUFFER_LEN
+	punct	)
+	punct	%
+	10num	2
+	punct	)
+第138行
+	punct	{
+第139行
+	if	if
+	punct	(
+	id	m_isBackward
+	punct	)
+第140行
+	punct	{
+第141行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferA
+	punct	;
+第142行
+	punct	++
+	id	m_currPos
+	punct	;
+第143行
+	id	m_isBackward
+	punct	=
+	id	false
+	punct	;
+第144行
+	punct	}
+第145行
+	else	else
+第146行
+	punct	{
+第147行
+	id	memset
+	punct	(
+	id	m_bufferA
+	punct	,
+	10num	0
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第148行
+	id	m_file
+	punct	.
+	id	read
+	punct	(
+	id	m_bufferA
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第149行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferA
+	punct	;
+第150行
+	punct	++
+	id	m_currPos
+	punct	;
+第151行
+	punct	}
+第152行
+	punct	}
+第153行
+	else	else
+第154行
+	punct	{
+第155行
+	if	if
+	punct	(
+	id	m_isBackward
+	punct	)
+第156行
+	punct	{
+第157行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferB
+	punct	;
+第158行
+	punct	++
+	id	m_currPos
+	punct	;
+第159行
+	id	m_isBackward
+	punct	=
+	id	false
+	punct	;
+第160行
+	punct	}
+第161行
+	else	else
+第162行
+	punct	{
+第163行
+	id	memset
+	punct	(
+	id	m_bufferB
+	punct	,
+	10num	0
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第164行
+	id	m_file
+	punct	.
+	id	read
+	punct	(
+	id	m_bufferB
+	punct	,
+	id	BUFFER_LEN
+	punct	)
+	punct	;
+第165行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferB
+	punct	;
+第166行
+	punct	++
+	id	m_currPos
+	punct	;
+第167行
+	punct	}
+第168行
+	punct	}
+第169行
+	punct	}
+第171行
+	return	return
+	id	true
+	punct	;
+第172行
+	punct	}
+第174行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	Backward
+	punct	(
+	punct	)
+第175行
+	punct	{
+第176行
+	if	if
+	punct	(
+	id	m_currPos
+	punct	%
+	id	BUFFER_LEN
+	punct	)
+第177行
+	punct	{
+第178行
+	punct	--
+	id	m_bufferMoved
+	punct	;
+第179行
+	punct	--
+	id	m_currPos
+	punct	;
+第180行
+	punct	}
+第181行
+	else	else
+第182行
+	punct	{
+第183行
+	if	if
+	punct	(
+	punct	(
+	id	m_currPos
+	punct	/
+	id	BUFFER_LEN
+	punct	)
+	punct	%
+	10num	2
+	punct	)
+第184行
+	punct	{
+第185行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferA
+	punct	+
+	id	BUFFER_LEN
+	punct	-
+	10num	1
+	punct	;
+第186行
+	punct	--
+	id	m_currPos
+	punct	;
+第187行
+	id	m_isBackward
+	punct	=
+	id	true
+	punct	;
+第188行
+	punct	}
+第189行
+	else	else
+第190行
+	punct	{
+第191行
+	id	m_bufferMoved
+	punct	=
+	id	m_bufferB
+	punct	+
+	id	BUFFER_LEN
+	punct	-
+	10num	1
+	punct	;
+第192行
+	punct	--
+	id	m_currPos
+	punct	;
+第193行
+	id	m_isBackward
+	punct	=
+	id	true
+	punct	;
+第194行
+	punct	}
+第195行
+	punct	}
+第197行
+	return	return
+	id	true
+	punct	;
+第198行
+	punct	}
+第200行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	DeleteNonsense
+	punct	(
+	punct	)
+第201行
+	punct	{
+第203行
+	while	while
+	punct	(
+	id	IsNonsense
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第204行
+	punct	{
+第205行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\n'
+	punct	)
+第206行
+	punct	++
+	id	m_lineNum
+	punct	;
+第207行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第208行
+	return	return
+	id	false
+	punct	;
+第209行
+	punct	}
+第212行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'/'
+	punct	)
+第213行
+	punct	{
+第215行
+	if	if
+	punct	(
+	punct	*
+	punct	(
+	id	m_bufferMoved
+	punct	+
+	10num	1
+	punct	)
+	punct	==
+	literal	'/'
+	punct	)
+第216行
+	punct	{
+第217行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第218行
+	return	return
+	id	false
+	punct	;
+第219行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第220行
+	return	return
+	id	false
+	punct	;
+第221行
+	while	while
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	!=
+	literal	'\n'
+	punct	)
+第222行
+	punct	{
+第223行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第224行
+	return	return
+	id	false
+	punct	;
+第225行
+	punct	}
+第226行
+	punct	++
+	id	m_lineNum
+	punct	;
+第227行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第228行
+	return	return
+	id	false
+	punct	;
+第229行
+	id	DeleteNonsense
+	punct	(
+	punct	)
+	punct	;
+第230行
+	punct	}
+第232行
+	else	else
+	if	if
+	punct	(
+	punct	*
+	punct	(
+	id	m_bufferMoved
+	punct	+
+	10num	1
+	punct	)
+	punct	==
+	literal	'*'
+	punct	)
+第233行
+	punct	{
+第234行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第235行
+	return	return
+	id	false
+	punct	;
+第236行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第237行
+	return	return
+	id	false
+	punct	;
+第238行
+	id	bool
+	id	finished
+	punct	=
+	id	false
+	punct	;
+第239行
+	while	while
+	punct	(
+	punct	!
+	id	finished
+	punct	)
+第240行
+	punct	{
+第241行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'*'
+	punct	)
+第242行
+	punct	{
+第243行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第244行
+	return	return
+	id	false
+	punct	;
+第246行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'/'
+	punct	)
+第247行
+	punct	{
+第248行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第249行
+	return	return
+	id	false
+	punct	;
+第250行
+	id	finished
+	punct	=
+	id	true
+	punct	;
+第251行
+	punct	}
+第252行
+	punct	}
+第253行
+	else	else
+第254行
+	punct	{
+第255行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\n'
+	punct	)
+第256行
+	punct	++
+	id	m_lineNum
+	punct	;
+第257行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第258行
+	return	return
+	id	false
+	punct	;
+第259行
+	punct	}
+第260行
+	punct	}
+第261行
+	id	DeleteNonsense
+	punct	(
+	punct	)
+	punct	;
+第262行
+	punct	}
+第263行
+	punct	}
+第264行
+	return	return
+	id	true
+	punct	;
+第265行
+	punct	}
+第267行
+	id	Token
+	id	LexicalAnalysis
+	punct	::
+	id	GetNumber
+	punct	(
+	id	string
+	punct	&
+	id	_string
+	punct	)
+第268行
+	punct	{
+第269行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'0'
+	punct	)
+第270行
+	punct	{
+第272行
+	if	if
+	punct	(
+	punct	*
+	punct	(
+	id	m_bufferMoved
+	punct	+
+	10num	1
+	punct	)
+	punct	==
+	literal	'x'
+	punct	||
+	punct	*
+	punct	(
+	id	m_bufferMoved
+	punct	+
+	10num	1
+	punct	)
+	punct	==
+	literal	'X'
+	punct	)
+第273行
+	punct	{
+第274行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第275行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第276行
+	return	return
+	id	ERROR
+	punct	;
+第277行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第278行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第279行
+	return	return
+	id	ERROR
+	punct	;
+第281行
+	if	if
+	punct	(
+	id	IsHexadecimalNumber
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第282行
+	punct	{
+第283行
+	while	while
+	punct	(
+	id	IsHexadecimalNumber
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第284行
+	punct	{
+第285行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第286行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第287行
+	return	return
+	id	ERROR
+	punct	;
+第288行
+	punct	}
+第289行
+	punct	}
+第290行
+	else	else
+第291行
+	punct	{
+第292行
+	id	_string
+	punct	=
+	literal	"there is only a 0x, whitch is illegal"
+	punct	;
+第293行
+	return	return
+	id	ERROR
+	punct	;
+第294行
+	punct	}
+第295行
+	if	if
+	punct	(
+	id	IsAlphaOrUnderline
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第296行
+	punct	{
+第297行
+	id	_string
+	punct	+=
+	literal	" with alpha or underline is illegal"
+	punct	;
+第298行
+	return	return
+	id	ERROR
+	punct	;
+第299行
+	punct	}
+第300行
+	return	return
+	id	HEXADECIMALNUM
+	punct	;
+第301行
+	punct	}
+第302行
+	punct	}
+第305行
+	while	while
+	punct	(
+	id	IsDecimalNumber
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第306行
+	punct	{
+第307行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第308行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第309行
+	return	return
+	id	ERROR
+	punct	;
+第310行
+	punct	}
+第312行
+	if	if
+	punct	(
+	id	IsDot
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第313行
+	punct	{
+第314行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第315行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第316行
+	return	return
+	id	ERROR
+	punct	;
+第318行
+	while	while
+	punct	(
+	id	IsDecimalNumber
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第319行
+	punct	{
+第320行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第321行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第322行
+	return	return
+	id	ERROR
+	punct	;
+第323行
+	punct	}
+第324行
+	punct	}
+第325行
+	if	if
+	punct	(
+	id	IsAlphaOrUnderline
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第326行
+	punct	{
+第327行
+	id	_string
+	punct	+=
+	literal	" with alpha or underline is illegal"
+	punct	;
+第328行
+	return	return
+	id	ERROR
+	punct	;
+第329行
+	punct	}
+第330行
+	return	return
+	id	DECIMALNUM
+	punct	;
+第331行
+	punct	}
+第333行
+	id	Token
+	id	LexicalAnalysis
+	punct	::
+	id	GetKeywordOrIdentifier
+	punct	(
+	id	string
+	punct	&
+	id	_string
+	punct	)
+第334行
+	punct	{
+第335行
+	while	while
+	punct	(
+	id	IsAlphaOrUnderline
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第336行
+	punct	{
+第337行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第338行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第339行
+	return	return
+	id	ERROR
+	punct	;
+第340行
+	punct	}
+第341行
+	while	while
+	punct	(
+	id	IsAlphaOrNumberOrUnderline
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	)
+	punct	)
+第342行
+	punct	{
+第343行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第344行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第345行
+	return	return
+	id	ERROR
+	punct	;
+第346行
+	punct	}
+第347行
+	for	for
+	punct	(
+	int	int
+	id	i
+	punct	=
+	10num	0
+	punct	;
+	id	i
+	punct	<
+	id	m_keywordLen
+	punct	;
+	punct	++
+	id	i
+	punct	)
+第348行
+	punct	{
+第349行
+	if	if
+	punct	(
+	id	_string
+	punct	==
+	id	m_keyword
+	punct	[
+	id	i
+	punct	]
+	punct	)
+第350行
+	punct	{
+第352行
+	return	return
+	punct	(
+	id	Token
+	punct	)
+	id	i
+	punct	;
+第353行
+	punct	}
+第354行
+	punct	}
+第357行
+	return	return
+	id	ID
+	punct	;
+第358行
+	punct	}
+第361行
+	id	Token
+	id	LexicalAnalysis
+	punct	::
+	id	GetPunctuation
+	punct	(
+	id	string
+	punct	&
+	id	_string
+	punct	)
+第362行
+	punct	{
+第363行
+	int	int
+	id	i
+	punct	=
+	10num	0
+	punct	;
+第364行
+	for	for
+	punct	(
+	punct	;
+	id	i
+	punct	<
+	id	m_punctuationLen
+	punct	;
+	punct	++
+	id	i
+	punct	)
+第365行
+	punct	{
+第366行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	id	m_punctuation
+	punct	[
+	id	i
+	punct	]
+	punct	)
+第367行
+	punct	{
+第368行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第369行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第370行
+	return	return
+	id	ERROR
+	punct	;
+第371行
+	break	break
+	punct	;
+第372行
+	punct	}
+第373行
+	punct	}
+第375行
+	if	if
+	punct	(
+	id	i
+	punct	>=
+	id	m_punctuationLen
+	punct	)
+第376行
+	punct	{
+第377行
+	return	return
+	id	ERROR
+	punct	;
+第378行
+	punct	}
+第380行
+	switch	switch
+	punct	(
+	id	_string
+	punct	[
+	id	_string
+	punct	.
+	id	size
+	punct	(
+	punct	)
+	punct	-
+	10num	1
+	punct	]
+	punct	)
+第381行
+	punct	{
+第382行
+	case	case
+	literal	'+'
+	punct	:
+第384行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'+'
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第385行
+	punct	{
+第386行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第387行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第388行
+	return	return
+	id	ERROR
+	punct	;
+第389行
+	punct	}
+第390行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第392行
+	case	case
+	literal	'-'
+	punct	:
+第394行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'-'
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'>'
+	punct	)
+第395行
+	punct	{
+第396行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第397行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第398行
+	return	return
+	id	ERROR
+	punct	;
+第399行
+	punct	}
+第400行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第402行
+	case	case
+	literal	'*'
+	punct	:
+第404行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第405行
+	punct	{
+第406行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第407行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第408行
+	return	return
+	id	ERROR
+	punct	;
+第409行
+	punct	}
+第410行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第412行
+	case	case
+	literal	'/'
+	punct	:
+第414行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第415行
+	punct	{
+第416行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第417行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第418行
+	return	return
+	id	ERROR
+	punct	;
+第419行
+	punct	}
+第420行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第422行
+	case	case
+	literal	'!'
+	punct	:
+第424行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第425行
+	punct	{
+第426行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第427行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第428行
+	return	return
+	id	ERROR
+	punct	;
+第429行
+	punct	}
+第430行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第432行
+	case	case
+	literal	'@'
+	punct	:
+第434行
+	id	_string
+	punct	=
+	literal	"the @ is illegal"
+	punct	;
+第435行
+	return	return
+	id	ERROR
+	punct	;
+第437行
+	case	case
+	literal	'&'
+	punct	:
+第439行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'&'
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第440行
+	punct	{
+第441行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第442行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第443行
+	return	return
+	id	ERROR
+	punct	;
+第444行
+	punct	}
+第445行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第447行
+	case	case
+	literal	'<'
+	punct	:
+第449行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'<'
+	punct	)
+第450行
+	punct	{
+第451行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第452行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第453行
+	return	return
+	id	ERROR
+	punct	;
+第454行
+	punct	}
+第455行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第457行
+	case	case
+	literal	'>'
+	punct	:
+第459行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'>'
+	punct	)
+第460行
+	punct	{
+第461行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第462行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第463行
+	return	return
+	id	ERROR
+	punct	;
+第464行
+	punct	}
+第465行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第467行
+	case	case
+	literal	'='
+	punct	:
+第469行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第470行
+	punct	{
+第471行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第472行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第473行
+	return	return
+	id	ERROR
+	punct	;
+第474行
+	punct	}
+第475行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第477行
+	case	case
+	literal	'|'
+	punct	:
+第479行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'|'
+	punct	||
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'='
+	punct	)
+第480行
+	punct	{
+第481行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第482行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第483行
+	return	return
+	id	ERROR
+	punct	;
+第484行
+	punct	}
+第485行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第487行
+	case	case
+	literal	':'
+	punct	:
+第489行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	':'
+	punct	)
+第490行
+	punct	{
+第491行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第492行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第493行
+	return	return
+	id	ERROR
+	punct	;
+第494行
+	punct	}
+第495行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第497行
+	case	case
+	literal	'\''
+	punct	:
+第498行
+	while	while
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	!=
+	literal	'\''
+	punct	)
+第499行
+	punct	{
+第500行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\\'
+	punct	)
+第501行
+	punct	{
+第502行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第503行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第504行
+	return	return
+	id	ERROR
+	punct	;
+第505行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\''
+	punct	)
+第506行
+	punct	{
+第507行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第508行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第509行
+	return	return
+	id	ERROR
+	punct	;
+第510行
+	punct	}
+第511行
+	else	else
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\\'
+	punct	)
+第512行
+	punct	{
+第513行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第514行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第515行
+	return	return
+	id	ERROR
+	punct	;
+第516行
+	punct	}
+第517行
+	punct	}
+第518行
+	else	else
+第519行
+	punct	{
+第520行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第521行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第522行
+	return	return
+	id	ERROR
+	punct	;
+第523行
+	punct	}
+第524行
+	punct	}
+第525行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第526行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第527行
+	return	return
+	id	ERROR
+	punct	;
+第528行
+	return	return
+	id	LITERAL
+	punct	;
+第530行
+	case	case
+	literal	'"'
+	punct	:
+第531行
+	while	while
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	!=
+	literal	'"'
+	punct	)
+第532行
+	punct	{
+第533行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\\'
+	punct	)
+第534行
+	punct	{
+第535行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第536行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第537行
+	return	return
+	id	ERROR
+	punct	;
+第538行
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'"'
+	punct	)
+第539行
+	punct	{
+第540行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第541行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第542行
+	return	return
+	id	ERROR
+	punct	;
+第543行
+	punct	}
+第544行
+	else	else
+	if	if
+	punct	(
+	punct	*
+	id	m_bufferMoved
+	punct	==
+	literal	'\\'
+	punct	)
+第545行
+	punct	{
+第546行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第547行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第548行
+	return	return
+	id	ERROR
+	punct	;
+第549行
+	punct	}
+第550行
+	punct	}
+第551行
+	else	else
+第552行
+	punct	{
+第553行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第554行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第555行
+	return	return
+	id	ERROR
+	punct	;
+第556行
+	punct	}
+第557行
+	punct	}
+第558行
+	id	_string
+	punct	+=
+	punct	*
+	id	m_bufferMoved
+	punct	;
+第559行
+	if	if
+	punct	(
+	punct	!
+	id	Forward
+	punct	(
+	punct	)
+	punct	)
+第560行
+	return	return
+	id	ERROR
+	punct	;
+第561行
+	return	return
+	id	LITERAL
+	punct	;
+第563行
+	default	default
+	punct	:
+第564行
+	break	break
+	punct	;
+第565行
+	punct	}
+第567行
+	return	return
+	id	PUNCTUATION
+	punct	;
+第568行
+	punct	}
+第571行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsDecimalNumber
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第572行
+	punct	{
+第573行
+	return	return
+	literal	'0'
+	punct	<=
+	id	_input
+	punct	&&
+	id	_input
+	punct	<=
+	literal	'9'
+	punct	;
+第574行
+	punct	}
+第576行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsHexadecimalNumber
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第577行
+	punct	{
+第578行
+	return	return
+	punct	(
+	literal	'0'
+	punct	<=
+	id	_input
+	punct	&&
+	id	_input
+	punct	<=
+	literal	'9'
+	punct	)
+	punct	||
+	punct	(
+	literal	'a'
+	punct	<=
+	id	_input
+	punct	&&
+	id	_input
+	punct	<=
+	literal	'f'
+	punct	)
+	punct	||
+	punct	(
+	literal	'A'
+	punct	<=
+	id	_input
+	punct	&&
+	id	_input
+	punct	<=
+	literal	'F'
+	punct	)
+	punct	;
+第579行
+	punct	}
+第581行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsDot
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第582行
+	punct	{
+第583行
+	return	return
+	id	_input
+	punct	==
+	literal	'.'
+	punct	;
+第584行
+	punct	}
+第586行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsAlphaOrUnderline
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第587行
+	punct	{
+第588行
+	return	return
+	punct	(
+	punct	(
+	literal	'a'
+	punct	<=
+	id	_input
+	punct	&&
+	id	_input
+	punct	<=
+	literal	'z'
+	punct	)
+	punct	||
+	punct	(
+	literal	'A'
+	punct	<=
+	id	_input
+	punct	&&
+	id	_input
+	punct	<=
+	literal	'Z'
+	punct	)
+	punct	)
+	punct	||
+	id	_input
+	punct	==
+	literal	'_'
+	punct	;
+第589行
+	punct	}
+第591行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsAlphaOrNumberOrUnderline
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第592行
+	punct	{
+第593行
+	return	return
+	id	IsDecimalNumber
+	punct	(
+	id	_input
+	punct	)
+	punct	||
+	id	IsAlphaOrUnderline
+	punct	(
+	id	_input
+	punct	)
+	punct	;
+第594行
+	punct	}
+第596行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsNonsense
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第597行
+	punct	{
+第598行
+	return	return
+	id	_input
+	punct	==
+	literal	' '
+	punct	||
+	id	_input
+	punct	==
+	literal	'\t'
+	punct	||
+	id	_input
+	punct	==
+	literal	'\n'
+	punct	||
+	id	_input
+	punct	==
+	literal	'\r'
+	punct	;
+第599行
+	punct	}
+第601行
+	id	bool
+	id	LexicalAnalysis
+	punct	::
+	id	IsEnd
+	punct	(
+	char	char
+	id	_input
+	punct	)
+第602行
+	punct	{
+第603行
+	return	return
+	id	_input
+	punct	==
+	literal	'\0'
+	punct	;
+第604行
+	punct	}
+文件长度：11738	文件行数：604	单词数量804
